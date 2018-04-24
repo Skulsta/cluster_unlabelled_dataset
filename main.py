@@ -1,4 +1,6 @@
 from sklearn.cluster import KMeans
 import pandas as pd
 
-dataset = pd.read_csv('seeds_dataset.tsv')
+dataset = pd.read_csv('seeds_dataset.tsv', delimiter="\t")
+
+print(dataset)
