@@ -16,9 +16,9 @@ import pandas as pd
 
 
 colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
-            'lenghtOfKernelGrove']
+            'lenghtOfKernelGrove', 'classifier']
 
-data = pd.read_table("seeds_dataset.txt", index_col=None, names=colnames, header=None)
+data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, header=None)
 
 
 print(data)
