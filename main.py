@@ -26,5 +26,7 @@ print(data.columns)
 print(data.shape)
 print(type(data))
 
-np = data.values
-print(type(np))
+numpy_array = data.values
+
+# print(numpy_array)
+print(numpy_array[:, 7])
