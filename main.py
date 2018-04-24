@@ -24,3 +24,7 @@ data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, heade
 print(data)
 print(data.columns)
 print(data.shape)
+print(type(data))
+
+np = data.values
+print(type(np))
