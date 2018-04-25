@@ -27,6 +27,11 @@ print(data.shape)
 print(type(data))
 
 numpy_array = data.values
+print(type(numpy_array))
 
 # print(numpy_array)
-print(numpy_array[:, 7])
+label = numpy_array[:, 7] # The last culomn. The class label.
+features = numpy_array[:, :7] # From index 0 to 6. 7 feature types.
+
+print(features)
+print(label)
