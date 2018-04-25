@@ -35,3 +35,4 @@ features = numpy_array[:, :7] # From index 0 to 6. 7 feature types.
 
 print(features)
 print(label)
+
