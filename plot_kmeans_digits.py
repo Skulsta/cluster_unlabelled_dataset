@@ -51,7 +51,6 @@ kmeans = KMeans(n_clusters=3, random_state=1)
 kmeans.fit(X)
 plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=100, c='green')
-mglearn.plots.plot_kmeans_boundaries()
 plt.show()
 
 """
