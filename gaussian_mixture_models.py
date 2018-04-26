@@ -13,13 +13,16 @@ numpy_array = data.values
 y = numpy_array[:, 7]   # The last culomn. The class label.
 X = numpy_array[:, :7]   # From index 0 to 6. 7 feature types.
 
+# Get the number of classifications
+n_labels = len(np.unique(y))
+
 # To be more in flow with the book and field, we could/should
-# call X 'X' and label 'y'
+# call features 'X' and label 'y'
 # print(X)
 # print(y)
 
 # Finding clusters in the same manner as k-means
-gmm = GaussianMixture(n_components=3).fit(X)
+gmm = GaussianMixture(n_components=n_labels).fit(X)
 labels = gmm.predict(X)
 plt.scatter(X[:, 0], X[:, 1], c=labels, s=40, cmap='viridis')
 plt.show()
