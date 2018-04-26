@@ -25,17 +25,36 @@ silhouette   silhouette coefficient
 =========== ========================================================
 
 """
-print(__doc__)
-
+import pandas as pd
 from time import time
 import numpy as np
 import matplotlib.pyplot as plt
+import mglearn
 
 from sklearn import metrics
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import scale
+
+colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
+            'lengthOfKernelGrove', 'classifier']
+
+data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, header=None, delimiter='\s+')
+
+numpy_array = data.values
+
+y = numpy_array[:, 7]  # The last column. The class label.
+X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
+
+kmeans = KMeans(n_clusters=3, random_state=1)
+kmeans.fit(X)
+plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=100, c='green')
+mglearn.plots.plot_kmeans_boundaries()
+plt.show()
+
+"""
 
 np.random.seed(42)
 
@@ -130,4 +149,4 @@ plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
-plt.show()
+"""
