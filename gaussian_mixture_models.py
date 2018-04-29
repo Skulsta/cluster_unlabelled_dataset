@@ -24,7 +24,7 @@ n_labels = len(np.unique(y))
 # Finding clusters in the same manner as k-means
 gmm = GaussianMixture(n_components=n_labels).fit(X)
 labels = gmm.predict(X)
-plt.scatter(X[:, 0], X[:, 1], c=labels, s=40, cmap='viridis')
+plt.scatter(X[:, 0], X[:, 5], c=labels, cmap='viridis')
 plt.show()
 
 # Using a probabilistic model to measure the probability
@@ -36,7 +36,7 @@ print(probability[:5].round(3))
 # Visualizing it
 size = 50 * probability.max(1) ** 2 # Square emphasizies differences
 plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=size)
-plt.show()
+# plt.show()
 
 
 # Copypasta
