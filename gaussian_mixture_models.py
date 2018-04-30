@@ -22,16 +22,18 @@ n_labels = len(np.unique(y))
 # print(y)
 
 # Finding clusters in the same manner as k-means
-gmm = GaussianMixture(n_components=n_labels).fit(X)
+gmm = GaussianMixture(n_components=n_labels, random_state=1, covariance_type='diag').fit(X)
 labels = gmm.predict(X)
-plt.scatter(X[:, 0], X[:, 5], c=labels, cmap='viridis')
+plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
 plt.show()
 
 # Using a probabilistic model to measure the probability
-# that any point belongs to the given cluser. Not sure if this is right tho...
+# that any point belongs to the given cluster. Not sure if this is right tho...
 probability = gmm.predict_proba(X)
 print("Probability that any point belongs to a given cluster")
 print(probability[:5].round(3))
+
+
 
 # Visualizing it
 size = 50 * probability.max(1) ** 2 # Square emphasizies differences
