@@ -21,8 +21,8 @@ def make_kmeans_cluster():
     X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
 
     pca = PCA(n_components=2, svd_solver='full')
-    pca.fit(X);
-    X = pca.transform(X);
+    pca.fit(X)
+    X = pca.transform(X)
 
     kmeans = KMeans(n_clusters=3)
     kmeans.fit(X)
@@ -32,5 +32,4 @@ def make_kmeans_cluster():
     plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=70, c='blue')
     plt.title('Kmeans Cluster')
     plt.show()
-
 
