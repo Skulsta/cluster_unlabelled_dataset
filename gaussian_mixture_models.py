@@ -76,6 +76,7 @@ def plot_gmm(gmm, X, label=True, ax=None):
     for pos, covar, w in zip(gmm.means_, gmm.covars_, gmm.weights_):
         draw_ellipse(pos, covar, alpha=w * w_factor)
 
+
 gmm = GaussianMixture(n_components=4, random_state=42)
 # plot_gmm(gmm, X) Not working - 'GaussianMixture' object has no attribute 'covars_'
 
