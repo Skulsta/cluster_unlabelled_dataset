@@ -4,41 +4,42 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np
 
-colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
+def make_gaussian_cluster():
+    colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
         'lenghtOfKernelGrove', 'classifier']
 
-data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, header=None, delimiter='\s+')
+    data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, header=None, delimiter='\s+')
 
-numpy_array = data.values
-y = numpy_array[:, 7]   # The last culomn. The class label.
-X = numpy_array[:, :7]   # From index 0 to 6. 7 feature types.
+    numpy_array = data.values
+    y = numpy_array[:, 7]   # The last culomn. The class label.
+    X = numpy_array[:, :7]   # From index 0 to 6. 7 feature types.
 
-# Get the number of classifications
-n_labels = len(np.unique(y))
+    # Get the number of classifications
+    n_labels = len(np.unique(y))
 
-# To be more in flow with the book and field, we could/should
-# call features 'X' and label 'y'
-# print(X)
-# print(y)
+    # To be more in flow with the book and field, we could/should
+    # call features 'X' and label 'y'
+    # print(X)
+    #  print(y)
 
-# Finding clusters in the same manner as k-means
-gmm = GaussianMixture(n_components=n_labels, random_state=1, covariance_type='diag').fit(X)
-labels = gmm.predict(X)
-plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
-plt.show()
+    # Finding clusters in the same manner as k-means
+    gmm = GaussianMixture(n_components=n_labels, random_state=1, covariance_type='diag').fit(X)
+    labels = gmm.predict(X)
+    plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
+    plt.show()
 
-# Using a probabilistic model to measure the probability
-# that any point belongs to the given cluster. Not sure if this is right tho...
-probability = gmm.predict_proba(X)
-print("Probability that any point belongs to a given cluster")
-print(probability[:5].round(3))
+    # Using a probabilistic model to measure the probability
+    # that any point belongs to the given cluster. Not sure if this is right tho...
+    probability = gmm.predict_proba(X)
+    print("Probability that any point belongs to a given cluster")
+    print(probability[:5].round(3))
 
 
 
-# Visualizing it
-size = 50 * probability.max(1) ** 2 # Square emphasizies differences
-plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=size)
-# plt.show()
+    # Visualizing it
+    size = 50 * probability.max(1) ** 2 # Square emphasizies differences
+    plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=size)
+    # plt.show()
 
 
 # Copypasta

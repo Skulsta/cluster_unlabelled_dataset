@@ -23,9 +23,12 @@ n_labels = len(np.unique(y))
 colors = ("red", "green", "blue")
 groups = ("Group 1", "Group 2", "Group 3")
 
-# Plot the data with K Means Labels
-kmeans = KMeans(n_clusters=n_labels, random_state=1)
-labels = kmeans.fit(X).predict(X)
-plt.scatter(X[:, 0], X[:, 5], c=labels, s=50, cmap='viridis')
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 5], s=100, c='black')
-plt.show()
+def make_kmeans_cluster_plot():
+    # Plot the data with K Means Labels
+    kmeans = KMeans(n_clusters=n_labels, random_state=1)
+    labels = kmeans.fit(X).predict(X)
+    plt.scatter(X[:, 0], X[:, 5], c=labels, s=50, cmap='viridis')
+    plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 5], s=100, c='black')
+    plt.show()
+
+make_kmeans_cluster_plot()
