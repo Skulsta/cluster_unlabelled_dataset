@@ -24,18 +24,13 @@ def make_kmeans_cluster():
     pca.fit(X);
     X = pca.transform(X);
 
-<<<<<<< HEAD
     kmeans = KMeans(n_clusters=3)
     kmeans.fit(X)
     print(kmeans.labels_)
+
     plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
     plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=70, c='blue')
+    plt.title('Kmeans Cluster')
     plt.show()
-=======
-kmeans = KMeans(n_clusters=3)
-kmeans.fit(X)
 
-plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=70, c='blue')
-plt.show()
->>>>>>> e3e3ecd2e4f7ea1fd3c4ddffd894ed722b0dd49a
+

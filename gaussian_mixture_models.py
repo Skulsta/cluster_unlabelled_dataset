@@ -26,6 +26,8 @@ def make_gaussian_cluster():
     gmm = GaussianMixture(n_components=n_labels, random_state=1, covariance_type='diag').fit(X)
     labels = gmm.predict(X)
     plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
+    plt.scatter(gmm.cluster_centers_[:, 0], gmm.cluster_centers_[:, 2], s=70, c='blue')
+    plt.title('Gaussian Mixture Model Cluster')
     plt.show()
 
     # Using a probabilistic model to measure the probability
