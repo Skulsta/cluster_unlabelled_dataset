@@ -25,7 +25,7 @@ X = pca.transform(X);
 
 kmeans = KMeans(n_clusters=3)
 kmeans.fit(X)
-print(kmeans.labels_)
+
 plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=70, c='blue')
 plt.show()
