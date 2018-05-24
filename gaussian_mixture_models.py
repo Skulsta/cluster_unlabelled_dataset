@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.mixture import GaussianMixture
 import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 import numpy as np
 
 def make_gaussian_cluster():
@@ -18,10 +19,14 @@ def make_gaussian_cluster():
     # print(X)
     #  print(y)
 
+    pca = PCA(n_components=3, svd_solver='full')
+    pca.fit(X)
+    X = pca.transform(X)
+
     # Finding clusters in the same manner as k-means
     gmm = GaussianMixture(n_components=3, random_state=1, covariance_type='diag').fit(X)
     labels = gmm.predict(X)
-    plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
+    plt.scatter(X[:,0], X[:, 2], c=labels, cmap='viridis')
     plt.title('Gaussian Mixture Model Cluster')
     plt.show()
 
