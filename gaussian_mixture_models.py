@@ -18,14 +18,14 @@ def make_gaussian_cluster():
     # print(X)
     #  print(y)
 
-    # pca = PCA(n_components=3, svd_solver='full')
-    # pca.fit(X)
-    # X = pca.transform(X)
+    pca = PCA(n_components=2)
+    pca.fit(X)
+    X = pca.transform(X)
 
     # Finding clusters in the same manner as k-means
-    gmm = GaussianMixture(n_components=3, random_state=1, covariance_type='diag').fit(X)
+    gmm = GaussianMixture(n_components=3, random_state=1, covariance_type='spherical').fit(X)
     labels = gmm.predict(X)
-    plt.scatter(X[:, 0], X[:, 2], c=labels, cmap='viridis')
-    plt.title('Gaussian Mixture Model Cluster')
+    plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
+    plt.title('Gaussian Mixture Model Cluster, X-axis: area, Y-axis: perimeter')
     plt.show()
 
