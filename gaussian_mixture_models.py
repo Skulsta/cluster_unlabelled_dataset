@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.mixture import GaussianMixture
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
-import numpy as np
 
 def make_gaussian_cluster():
     colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
