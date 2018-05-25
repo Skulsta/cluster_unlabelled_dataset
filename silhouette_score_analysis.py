@@ -1,3 +1,4 @@
+from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
@@ -14,6 +15,10 @@ numpy_array = data.values
 
 y = numpy_array[:, 7]  # The last column. The class label. Not used in our unsupervised learning.
 X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
+
+pca = PCA(n_components=2)
+pca.fit(X)
+X = pca.transform(X)
 cluster_range = range(2, 5)
 
 

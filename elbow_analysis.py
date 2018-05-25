@@ -1,3 +1,4 @@
+from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.mixture import gaussian_mixture as gmm
@@ -14,6 +15,10 @@ numpy_array = data.values
 y = numpy_array[:, 7]  # The last column. The class label. Not used in our unsupervised learning.
 X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
 
+pca = PCA(n_components=2)
+pca.fit(X)
+X = pca.transform(X)
+
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
@@ -21,9 +26,9 @@ cluster_range = range(1, 7)
 cluster_errors = []
 
 for num_clusters in cluster_range:
-    clusters = gmm.GaussianMixture(num_clusters)
+    clusters = KMeans(num_clusters)
     clusters.fit(X_scaled)
-    cluster_errors.append(clusters)
+    cluster_errors.append(clusters.inertia_)
 
 clusters_df = pd.DataFrame({"num_clusters":cluster_range, "cluster_errors": cluster_errors})
 
