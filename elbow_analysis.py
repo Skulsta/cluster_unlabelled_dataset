@@ -15,9 +15,9 @@ numpy_array = data.values
 y = numpy_array[:, 7]  # The last column. The class label. Not used in our unsupervised learning.
 X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
 
-# pca = PCA(n_components=2)
-# pca.fit(X)
-# X = pca.transform(X)
+pca = PCA(n_components=2)
+pca.fit(X)
+X = pca.transform(X)
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
