@@ -27,6 +27,7 @@ def make_kmeans_cluster():
     pca.fit(X)  # Fitting X to the PCA model.
     X = pca.transform(X)  # Fitting X and then reducing the dimensionality.
 
+    # Code used for Factor Analysis. Did not go with this as PCA worked better.
     # fa = FactorAnalysis(n_components=2)
     # fa.fit(X)
     # X = fa.transform(X)
@@ -34,6 +35,7 @@ def make_kmeans_cluster():
     # Applying Kmeans to X(data).
     kmeans = KMeans(n_clusters=3)  # Parameter determines number of clusters.
     kmeans.fit(X)  # Fitting data to kmeans model.
+    print("Labelling through K-means")
     print(kmeans.labels_)  # Printing out the labels that KMeans have calculated.
 
 
