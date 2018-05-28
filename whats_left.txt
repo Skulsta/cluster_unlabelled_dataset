@@ -1,0 +1,6 @@
+Things to finish before turning the assignment in:
+- finishing the report. Not much left
+- writing a text file explaining how to run the code, taken into account that we are not to include the dataset in the
+file we are submitting
+- See if we are able to circle the clusters to clarify boarders
+- remove the dataset

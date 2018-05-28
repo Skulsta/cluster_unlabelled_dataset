@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
+
 
 
 def make_kmeans_cluster():
@@ -37,9 +37,10 @@ def make_kmeans_cluster():
     kmeans.fit(X)  # Fitting data to kmeans model.
     print(kmeans.labels_)  # Printing out the labels post-Kmeans
 
+
     plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
-    plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=70, c='blue')
-    plt.title('Kmeans Cluster')
+    # plt.scatter(kmeans.cluster_centers_[:, 2], kmeans.cluster_centers_[:, 3], s=70, c='blue')
+    plt.title('Kmeans Clustering')
     plt.show()
 
 
