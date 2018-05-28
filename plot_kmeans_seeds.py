@@ -8,7 +8,6 @@ from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
 
-
 def make_kmeans_cluster():
     # Names of the columns in the data.
     colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
@@ -35,7 +34,7 @@ def make_kmeans_cluster():
     # Applying Kmeans to X(data).
     kmeans = KMeans(n_clusters=3)  # Parameter determines number of clusters.
     kmeans.fit(X)  # Fitting data to kmeans model.
-    print(kmeans.labels_)  # Printing out the labels post-Kmeans
+    print(kmeans.labels_)  # Printing out the labels that KMeans have calculated.
 
 
     plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_)
