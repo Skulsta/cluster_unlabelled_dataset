@@ -6,24 +6,29 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Names of the columns in the data.
 colnames = ['area', 'perimeter', 'compactness', 'lenghtOfKernel', 'widthOfKernel', 'assymetryCoefficient',
             'lengthOfKernelGrove', 'classifier']
 
+# Processes the data using pandas. With parameters formatting the data.
 data = pd.read_table("seeds_dataset.txt", index_col=False, names=colnames, header=None, delimiter='\s+')
 
+# Assigning the data.values as a numpy array.
 numpy_array = data.values
 
 y = numpy_array[:, 7]  # The last column. The class label. Not used in our unsupervised learning.
 X = numpy_array[:, :7]  # From index 0 to 6. 7 feature types.
 
-pca = PCA(n_components=2)
-pca.fit(X)
-X = pca.transform(X)
-cluster_range = range(2, 5)
+# Principal Component Analysis. Used to reduce dimensionality of the data.
+pca = PCA(n_components=2)  # Parameter that determines the number of components you want the data reduced to.
+pca.fit(X)  # Fitting X to the PCA model.
+X = pca.transform(X)  # Fitting X and then reducing the dimensionality.
 
+cluster_range = range(2, 5)  # Sets the cluster range r to 2 => r > 5.
 
+# Scaler standardizes the data to a mean of 0 and variance of 1.
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X_scaled = scaler.fit_transform(X)  # Fitting the data to the scalar model.
 
 for n_clusters in cluster_range:
     # Create a subplot with 1 row and 2 columns
@@ -83,7 +88,7 @@ for n_clusters in cluster_range:
     # The vertical line for average silhouette score of all the values
     ax1.axvline(x=silhouette_avg, color="red", linestyle="--")
 
-    ax1.set_yticks([])  # Clear the yaxis labels / ticks
+    ax1.set_yticks([])  # Clear the y-axis labels / ticks
     ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
 
     # 2nd Plot showing the actual clusters formed
@@ -100,6 +105,7 @@ for n_clusters in cluster_range:
     for i, c in enumerate(centers):
         ax2.scatter(c[0], c[1], marker='$%d$' % i, alpha=1, s=50)
 
+    # Sets the different axises and titles and parameters for these and then shows the graphs.
     ax2.set_title("The visualization of the clustered data.")
     ax2.set_xlabel("Feature space for the 1st feature")
     ax2.set_ylabel("Feature space for the 2nd feature")
@@ -107,5 +113,4 @@ for n_clusters in cluster_range:
     plt.suptitle(("Silhouette analysis for KMeans clustering on sample data "
                   "with n_clusters = %d" % n_clusters),
                  fontsize=14, fontweight='bold')
-
     plt.show()
