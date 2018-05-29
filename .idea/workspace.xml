@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25438d9c-9be3-417a-b900-0740d4541335" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian_mixture_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian_mixture_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_kmeans_seeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_kmeans_seeds.py" afterDir="false" />
-    </list>
+    <list default="true" id="25438d9c-9be3-417a-b900-0740d4541335" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +14,7 @@
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$elbow_analysis.coverage" NAME="elbow_analysis Coverage Results" MODIFIED="1527524533280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$plot_kmeans_seeds.coverage" NAME="plot_kmeans_seeds Coverage Results" MODIFIED="1525079487062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$plot_kmeans_digits.coverage" NAME="plot_kmeans_digits Coverage Results" MODIFIED="1525077179788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$main.coverage" NAME="main Coverage Results" MODIFIED="1527525335550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$main.coverage" NAME="main Coverage Results" MODIFIED="1527525462789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$silhouette_score_analysis.coverage" NAME="silhouette_score_analysis Coverage Results" MODIFIED="1527524562232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$k_means.coverage" NAME="k-means Coverage Results" MODIFIED="1525078690744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cluster_unlabelled_dataset$BICscore.coverage" NAME="BICscore Coverage Results" MODIFIED="1527247619328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
