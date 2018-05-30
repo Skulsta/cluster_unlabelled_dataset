@@ -1,6 +1,6 @@
 
 How to run the code:
-THe file path of the data set needs to be set in the row where data is defined(data =). Replace the name of your dataset 
+The file path of the data set needs to be set in the row where data is defined(data =). Replace the name of your dataset 
 in the field where "seeds_dataset.txt" is currently. This will assure that the the main method will run smoothly.
 If you use the default name and it is placed in the folder of the main method, it should work automatically.
 
