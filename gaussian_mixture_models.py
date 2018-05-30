@@ -39,3 +39,4 @@ def make_gaussian_cluster():
     plt.title('GMM clustering')  # Title of plot.
     plt.show()  # Shows plot.
 
+make_gaussian_cluster()

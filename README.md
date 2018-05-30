@@ -7,9 +7,8 @@ If you use the default name and it is placed in the folder of the main method, i
 Run the main.py file, and the two visualizations of K-means and GMM will occur in the Sci-View frame. Doing this,
 the specific labelling will be presented in the terminal.
  
-If you want to run each algorithms alone, comment out the method you don't want to 
-run. The gaussian_kmeans_models.py and plot_kmeans_seeds.py needs to be run through the main method to show
-plot and print to terminal.
+If you want to run each algorithms separately, either comment out the method you don't want to 
+run in the main method or run the python file separately. 
 
 To see how we used Silhouette score analysis and elbow analysis, run silhouette_score_analysis.py
 and elbow_analysis.py and their results will occur in the terminal and in the Sci-View frame. This is done
