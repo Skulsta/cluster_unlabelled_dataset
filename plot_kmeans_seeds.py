@@ -44,5 +44,4 @@ def make_kmeans_cluster():
     plt.title('Kmeans Clustering')
     plt.show()
 
-
-
+make_kmeans_cluster()
